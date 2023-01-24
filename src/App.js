@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+
+let progressInterval = null;
 
 function App() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    progressInterval = setInterval(() => {
+      setProgress((prev) => prev + 1);
+    }, 100);
+  }, []);
+
+  useEffect(() => {
+    if (progress >= 100) {
+      clearInterval(progressInterval);
+    }
+  }, [progress]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="m-5">
+      <h5 className="mb-3">Order Status</h5>
+      <div className="progress w-50" style={{ height: 30}}>
+        <div
+          className="progress-bar"
+          role="progressbar"
+          style={{ width: `${progress}%` }}
         >
-          Learn React always
-        </a>
-      </header>
+          {progress}%
+        </div>
+      </div>
     </div>
   );
 }
