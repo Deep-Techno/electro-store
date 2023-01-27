@@ -91,7 +91,7 @@ function App() {
                 role="progressbar"
                 style={{ width: `${progress}%` }}
               >
-                {progress}
+                {progress.hide}
               </div>
             </div>
           </span>
