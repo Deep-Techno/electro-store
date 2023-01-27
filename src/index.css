@@ -11,8 +11,12 @@
 .progress w-100 {
   border-radius: 12px;
 }
-.mt-13 {
-  margin-top: 11rem;
+.mt-10 {
+  margin-top: 8rem;
+}
+.py-2 {
+  display:grid;
+    grid-template-rows: max-content 60px 1fr;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
