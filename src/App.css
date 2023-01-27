@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+.track_warper{
+  position: relative;
+}
+.order_status{
+  position: absolute;
+  top: -16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 38px;
+}
+
+.circle{
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gainsboro;
+  border-radius: 50%;
+  
+  
+}
+
+.circle img{
+  width: 38px;
+  height: 38px;
+}
