@@ -91,11 +91,22 @@ function App() {
                 role="progressbar"
                 style={{ width: `${progress}%` }}
               >
-                {progress}%
+                {progress}
               </div>
             </div>
           </span>
         </div>
+        <span>
+          <div className="mt-3">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Order
+            Placed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Order
+            in
+            progress&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On
+            the
+            Way&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Order
+            delivered
+          </div>
+        </span>
       </div>
     </div>
   );
