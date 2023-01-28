@@ -50,6 +50,20 @@
   padding: 0 38px;
 }
 
+.circle_wraper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.circle_wraper label {
+  padding-top: 2px;
+}
+
+.svg-icon {
+  fill: rgb(0, 0, 0);
+}
 .circle {
   width: 60px;
   height: 60px;
