@@ -3,6 +3,7 @@ import cart_icon from "../assets/icon/cart.svg";
 import process_icon from "../assets/icon/process.svg";
 import truck from "../assets/icon/deliverycar.png";
 import home_icon from "../assets/icon/home.svg";
+import { Routes, Route } from "react-router-dom";
 
 import "../App.css";
 
