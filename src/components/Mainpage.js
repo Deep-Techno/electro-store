@@ -5,11 +5,13 @@ import Shopwithus from './Shopwithus';
 import Bestdevices from './Bestdevices';
 import Copyright from './Copyright';
 import Footer from './Footer';
+import SearchBar from './SearchBar';
 const Mainpage=()=>
 {
 
 
     const [info, setinfo] = useState([]);
+    const [query,setquery]=useState('')
     useEffect(() => {
       fetch('http://localhost:8080/api/product/productDetails')
         .then(response => response.json())
@@ -38,6 +40,12 @@ const Mainpage=()=>
       {/* arrival section */}
       <Bestdevices></Bestdevices>
       {/* end arrival section */}
+      {/* search bar */}
+      <form class="search" action="">
+  <input style={{width:'50%',padding: '20px',fontSize:'x-large',margin:'25px 300px',}} type="search" placeholder="Search here..."  onChange={e=>setquery(e.target.value)}/>
+ 
+</form>
+      {/* end search bar  */}
       {/* product section */}
       <section className="product_section layout_padding">
         <div className="container">
@@ -47,7 +55,7 @@ const Mainpage=()=>
             </h2>
           </div>
           <div className="row">
-            {info.map((info,index)=>(
+            {info.filter((info)=>info.productName.toLowerCase().includes(query)).map((info,index)=>(
                 <div className="col-sm-6 col-md-4 col-lg-4">
               <div className="box">
                 <div className="option_container">
