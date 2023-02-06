@@ -11,7 +11,7 @@ return(
             <div className="col-md-4">
               <div className="full">
                 <div className="logo_footer">
-                  <a href="#"><img width={210} src="images/qq.png" alt="#" /></a>
+                  <a href="#"><img width={210} src="images/qq.PNG" alt="#" /></a>
                 </div>
                 <div className="information_f">
                   <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
