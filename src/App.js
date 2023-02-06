@@ -1,7 +1,9 @@
 import React from "react";
 import Card from "./components/Orderstatus_Card";
 import Mainpage from "./components/Mainpage";
+import Singleproductdetail from "./components/Singleproductdetail";
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
+
 const App = () => {
   // return <Mainpage />;
   return(
@@ -10,6 +12,7 @@ const App = () => {
 
 <Routes>
   <Route path='/' element={<Mainpage></Mainpage>}></Route>
+  <Route path='/:id' element={<Singleproductdetail></Singleproductdetail>}> </Route>
   
   
 </Routes>
