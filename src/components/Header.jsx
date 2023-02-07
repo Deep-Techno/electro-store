@@ -6,7 +6,7 @@ const Header=()=>{
 <header className="header_section">
           <div className="container">
             <nav className="navbar navbar-expand-lg custom_nav-container ">
-              <Link className="navbar-brand" to="/i"><img width={250} src="images/qq.png" alt="#" /></Link>
+              <Link className="navbar-brand" to="/"><img width={250} src="images/qq.png" alt="#" /></Link>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className> </span>
               </button>
