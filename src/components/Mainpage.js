@@ -5,6 +5,7 @@ import Shopwithus from './Shopwithus';
 import Bestdevices from './Bestdevices';
 import Copyright from './Copyright';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 const Mainpage=()=>
 {
@@ -60,10 +61,8 @@ const Mainpage=()=>
               <div className="box">
                 <div className="option_container">
                   <div className="options">
-                    <a href={info._id} className="option1">
-                     details
-                    </a>
-                    <a href="kkkk" className="option2">
+                  <Link className="option1" to={info._id}>details</Link>
+                    <a href="#" className="option2">
                       Buy Now
                     </a>
                   </div>
@@ -217,6 +216,7 @@ const Mainpage=()=>
       {/* popper js */}
       {/* bootstrap js */}
       {/* custom js */}
+    
     </div>
   );
 }
