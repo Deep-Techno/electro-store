@@ -95,7 +95,7 @@ function Singleproductdetail(){
                  
                   <div className="product_price">{row.productName}</div>
                   <div className="product-rating"><span className="badge badge-success"><i className="fa fa-star" /> 4.5 Star</span> <span className="rating-review">35 Ratings &amp; 45 Reviews</span></div>
-                  <div> <span className="product_price">152222</span> <strike className="product_discount"></strike> </div>
+                  <div> <span className="product_price">{row.productPrice}</span> <strike className="product_discount"></strike> </div>
                   <div> <span className="product_saved">You Saved:</span> <span style={{color: 'black'}}>₹ 2,000<span> </span></span></div>
                   <hr className="singleline" />
                   <h3 style={{color:'blue'}}>product productDescription</h3>
