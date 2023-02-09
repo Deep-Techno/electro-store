@@ -53,9 +53,9 @@ const Header = () => {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Products
-                  </a>
+                <Link className="nav-link" to="/productupload">
+                    product upload <span className="sr-only">(current)</span>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
