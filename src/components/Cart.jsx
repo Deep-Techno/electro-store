@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteItems, updateItemQuantity } from "../redux/action/itemAction";
 import Header from "./Header";
+import PaypalButton from "./PaypalButton";
 
 export default function Cart() {
   const dispatch = useDispatch();
+  const [visible, setVisible] = useState(false);
   const items = useSelector((state) => state?.item.itemsList);
   const [quantity, setQuantity] = useState({});
   const handleItemRemove = (id) => {
@@ -100,9 +102,26 @@ export default function Cart() {
             </div>
           </div>
 
-          <button class="checkout">Checkout</button>
+          <button class="checkout" onClick={() => setVisible(true)}>
+            Checkout
+          </button>
         </div>
       </div>
+
+      {/* payment popup */}
+      {visible ? (
+        <div class="checkout_dialog">
+          <button className="close" onClick={() => setVisible(false)}>
+            X
+          </button>
+          <div className="paypalBtn">
+            <PaypalButton
+              amount={grandTotal}
+              clientId="AdWBzuH1pGpdZ2nXpANd5YFm0dCLOfOjSV-pVkTp4JGJDLWd5uw7sMhPdukI9tcV4p4YCQCWBexg1o4w"
+            />
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
