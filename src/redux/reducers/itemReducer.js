@@ -1,6 +1,9 @@
-/** @format */
-
-import { ADD_ITEM, DELETE_ITEM, UPDATE_ITEM_QUANTITY } from "../action/types";
+import {
+  ADD_ITEM,
+  DELETE_ITEM,
+  UPDATE_ITEM_QUANTITY,
+  REMOVE_ALL,
+} from "../action/types";
 const initialState = {
   itemsList: [],
 };
@@ -21,6 +24,8 @@ export default function (state = initialState, action) {
         ),
       };
 
+    case REMOVE_ALL:
+      return initialState;
     case UPDATE_ITEM_QUANTITY:
       return {
         ...state,
