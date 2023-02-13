@@ -6,6 +6,7 @@ import Cart from "./components/Cart";
 import { Provider } from "react-redux";
 import { persistor, store } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
+import Productupload  from "./components/productupload/Productupload";
 
 const App = () => {
   return (
@@ -17,6 +18,8 @@ const App = () => {
               <Route path="/" element={<Mainpage />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/:id" element={<Singleproductdetail />} />
+              <Route path='/productupload' element={<Productupload></Productupload>}> </Route>
+              
             </Routes>
           </BrowserRouter>
         </PersistGate>
