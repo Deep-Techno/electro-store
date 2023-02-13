@@ -9,14 +9,14 @@ const Header = () => {
       <header className="header_section">
         <div className="container">
           <nav className="navbar navbar-expand-lg custom_nav-container ">
-            {/* <Link className="navbar-brand" to="/">
+            <Link className="navbar-brand" to="/">
               <img width={250} src="images/qq.png" alt="#" />
-            </Link> */}
-            <div className="logo_header">
+            </Link>
+            {/* <div className="logo_header">
               <a href="#">
                 <img width={210} src="images/qq.PNG" alt="#" />
               </a>
-            </div>
+            </div> */}
             <button
               className="navbar-toggler"
               type="button"
