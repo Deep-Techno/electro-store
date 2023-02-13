@@ -10,7 +10,7 @@ const Header = () => {
         <div className="container">
           <nav className="navbar navbar-expand-lg custom_nav-container ">
             <Link className="navbar-brand" to="/">
-              <img width={250} src="images/qq.png" alt="#" />
+              <img width={250} src="images/qq.PNG" alt="#" />
             </Link>
             {/* <div className="logo_header">
               <a href="#">
@@ -62,7 +62,7 @@ const Header = () => {
                   </ul>
                 </li>
                 <li className="nav-item">
-                <Link className="nav-link" to="/productupload">
+                  <Link className="nav-link" to="/productupload">
                     product upload <span className="sr-only">(current)</span>
                   </Link>
                 </li>
