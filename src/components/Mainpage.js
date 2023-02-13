@@ -40,7 +40,7 @@ const Mainpage = () => {
       <Bestdevices></Bestdevices>
       {/* end arrival section */}
       {/* search bar */}
-      <form class="search" action="">
+      {/* <form class="search" action="">
         <input
           style={{
             width: "50%",
@@ -52,7 +52,27 @@ const Mainpage = () => {
           placeholder="Search here..."
           onChange={(e) => setquery(e.target.value)}
         />
-      </form>
+      </form> */}
+      <section className="subscribe_section" style={{margin:'15px '}}>
+        <div className="container-fuild">
+          <div className="box">
+            <div className="row">
+              <div className="col-md-6 offset-md-3">
+                <div className="subscribe_form ">
+                <div className="heading_container heading_center">
+                    <h3>Search Product</h3>
+                  </div>
+                 
+                  <form action>
+                    <input type="search" placeholder="Search " onChange={e=>setquery(e.target.value)} />
+                   
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* end search bar  */}
       {/* product section */}
       <section className="product_section layout_padding">
