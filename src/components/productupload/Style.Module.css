@@ -568,7 +568,7 @@
   }
   
   .input-file {
-    display: none;
+    display: block;
   }
   
   .input-file + label {

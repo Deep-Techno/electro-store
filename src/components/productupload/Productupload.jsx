@@ -2,6 +2,12 @@ import './Style.Module.css';
 import Header from "../Header"
 import Footer from "../Footer";
 import { useState } from "react";
+
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Productpload=()=>{
     
 
@@ -44,7 +50,7 @@ const Productpload=()=>{
             .then(response => response.text())
             .then(response => {
             
-              alert(response);
+              toast.success("Product upload successfully!");
             });
         };
   
@@ -60,7 +66,7 @@ const Productpload=()=>{
 
 <Header></Header>
 
-
+<ToastContainer />
 <div className="page-wrapper bg-dark p-t-100 p-b-50">
         <div >          
           <div className="card card-6">
@@ -112,8 +118,7 @@ const Productpload=()=>{
                   <div className="value">
                     <div className="input-group js-input-file">
                       <input className="input-file" type="file" name="image"onChange={handleChange} id="file" />
-                      <label className="label--file" htmlFor="file">Choose file</label>
-                      <span className="input-file__info">No file chosen</span>
+                     
                     </div>
                     <div className="label--desc">Upload your product data</div>
                   </div>
@@ -121,7 +126,7 @@ const Productpload=()=>{
               </form>
             </div>
             <div className="card-footer">
-              <button className="btn btn--radius-2 btn--blue-2" type="submit" onClick={handleSubmit}>upload product </button>
+              <button className="btn btn-primary" type="submit" onClick={handleSubmit}>upload product </button>
             </div>
           </div>
         </div>
