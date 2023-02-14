@@ -67,8 +67,8 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Blog
+                  <a className="nav-link" href="/admin/productinfo">
+                    updata and delete
                   </a>
                 </li>
                 <li className="nav-item">
