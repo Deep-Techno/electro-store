@@ -9,7 +9,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import Productupload  from "./components/productupload/Productupload";
 import Table from './components/product-updata-and-delete/Table';
 import Updataproduct from "./components/updata-product/Updataproduct";
-
+  import LoginForm from './components/Login/loginForm.jsx';
+import SignUpForm from './components/Signup/signUpForm';
 const App = () => {
   return (
     <>
@@ -23,6 +24,8 @@ const App = () => {
               <Route path='/productupload' element={<Productupload></Productupload>}> </Route>
               <Route path='/admin/productinfo' element={<Table></Table>}> </Route>
               <Route path='/admin/productinfo/updata/:id' element={<Updataproduct></Updataproduct>}> </Route>
+              <Route path='/signup' element={<SignUpForm></SignUpForm>}> </Route>
+              <Route path='/login' element={< LoginForm ></ LoginForm >}> </Route>
             </Routes>
           </BrowserRouter>
         </PersistGate>
