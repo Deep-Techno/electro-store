@@ -8,7 +8,10 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addItems } from "../redux/action/itemAction";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Mainpage = () => {
   const dispatch = useDispatch();
   const [info, setinfo] = useState([]);
@@ -21,10 +24,12 @@ const Mainpage = () => {
 
   const handleProductClick = (item) => {
     dispatch(addItems(item));
+    toast.success("Product is added to cart!");
   };
 
   return (
     <div>
+      <ToastContainer />
       <div className="hero_area">
         {/* header section strats */}
         <Header></Header>
@@ -53,19 +58,22 @@ const Mainpage = () => {
           onChange={(e) => setquery(e.target.value)}
         />
       </form> */}
-      <section className="subscribe_section" style={{margin:'15px '}}>
+      <section className="subscribe_section" style={{ margin: "15px " }}>
         <div className="container-fuild">
           <div className="box">
             <div className="row">
               <div className="col-md-6 offset-md-3">
                 <div className="subscribe_form ">
-                <div className="heading_container heading_center">
+                  <div className="heading_container heading_center">
                     <h3>Search Product</h3>
                   </div>
-                 
+
                   <form action>
-                    <input type="search" placeholder="Search " onChange={e=>setquery(e.target.value)} />
-                   
+                    <input
+                      type="search"
+                      placeholder="Search "
+                      onChange={(e) => setquery(e.target.value)}
+                    />
                   </form>
                 </div>
               </div>
@@ -123,10 +131,10 @@ const Mainpage = () => {
       </section>
       {/* end product section */}
       {/* subscribe section */}
-      
+
       {/* end subscribe section */}
       {/* client section */}
-      
+
       {/* end client section */}
       {/* footer start */}
       <Footer></Footer>
