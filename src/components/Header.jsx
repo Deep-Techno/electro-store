@@ -1,5 +1,9 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 const Header = () => {
+  const items = useSelector((state) => state?.item.itemsList);
+  const totalItems = items?.length;
+
   return (
     <>
       <header className="header_section">
@@ -8,6 +12,11 @@ const Header = () => {
             <Link className="navbar-brand" to="/">
               <img width={250} src="images/qq.PNG" alt="#" />
             </Link>
+            {/* <div className="logo_header">
+              <a href="#">
+                <img width={210} src="images/qq.PNG" alt="#" />
+              </a>
+            </div> */}
             <button
               className="navbar-toggler"
               type="button"
@@ -53,13 +62,13 @@ const Header = () => {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Products
-                  </a>
+                  <Link className="nav-link" to="/productupload">
+                    product upload <span className="sr-only">(current)</span>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Blog
+                  <a className="nav-link" href="/admin/productinfo">
+                    updata and delete
                   </a>
                 </li>
                 <li className="nav-item">
@@ -67,8 +76,9 @@ const Header = () => {
                     Contact
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
+                <li className="nav-item cart_nav">
+                  <div className="cart_counter">{totalItems}</div>
+                  <Link to="/cart" className="nav-link">
                     <svg
                       version="1.1"
                       id="Capa_1"
@@ -122,7 +132,7 @@ const Header = () => {
                       <g></g>
                       <g></g>
                     </svg>
-                  </a>
+                  </Link>
                 </li>
                 <form className="form-inline">
                   <button
