@@ -4,11 +4,12 @@ import axios from "axios";
 import './Main.css';
 import { useNavigate  } from 'react-router-dom';
 
-
+import Cookies from "js-cookie";
 
 
 const Updataproduct=()=>{
-
+  const jwt=Cookies.get();
+  console.log('ttttttttttttttt',jwt.token)
 
     const [singleproductdata,setsingleproduct]=useState([])
     const [updateddata, setupdateddata] = useState({});
@@ -22,7 +23,12 @@ const Updataproduct=()=>{
           
            const apiurl='http://localhost:8080/api/singleproduct';
            try{
-               const response= await  axios.get(`${apiurl}/${id}`)
+               const response= await  axios.get(`${apiurl}/${id}`,{
+                headers: {
+                  authorization: `${jwt.token}`, 
+                  "Content-Type": "application/json"
+                }
+              })
               
                // setsingleproduct(response.data.singledata)
                setsingleproduct(response.data)
@@ -36,7 +42,7 @@ const Updataproduct=()=>{
        },[]);
      
        console.log('single producttttttt',singleproductdata);
-
+    
 
        const onvaluechange= (e)=>{
         //console.log(e.target.name,e.target.value)
@@ -45,7 +51,12 @@ const Updataproduct=()=>{
         }
         const handleUpdate = (e) => {
             e.preventDefault();
-            axios.patch(`http://localhost:8080/api/productupdata/${id}`, updateddata)
+            axios.patch(`http://localhost:8080/api/productupdata/${id}`, updateddata,{
+              headers: {
+                authorization: `${jwt.token}`,
+                "Content-Type": "application/json"
+              }
+            })
               .then(response => {
                 
                  navigate('/admin/productinfo');
