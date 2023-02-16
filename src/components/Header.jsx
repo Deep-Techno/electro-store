@@ -38,29 +38,7 @@ const Header = () => {
                     Home <span className="sr-only">(current)</span>
                   </Link>
                 </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    data-toggle="dropdown"
-                    role="button"
-                    aria-haspopup="true"
-                    aria-expanded="true"
-                  >
-                    {" "}
-                    <span className="nav-label">
-                      Pages <span className="caret" />
-                    </span>
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <a href="#">About</a>
-                    </li>
-                    <li>
-                      <a href="testimonial.html">Testimonial</a>
-                    </li>
-                  </ul>
-                </li>
+
                 <li className="nav-item">
                   <Link className="nav-link" to="/productupload">
                     product upload <span className="sr-only">(current)</span>
@@ -71,11 +49,7 @@ const Header = () => {
                     updata and delete
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Contact
-                  </a>
-                </li>
+
                 <li className="nav-item cart_nav">
                   <div className="cart_counter">{totalItems}</div>
                   <Link to="/cart" className="nav-link">
