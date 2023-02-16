@@ -5,14 +5,22 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Cookies from "js-cookie";
 function Table(){
-
+  const jwt=Cookies.get();
+  console.log('ttttttttttttttt',jwt.token)
 
     const [info, setinfo] = useState([]);
     const [rerenderKey, setRerenderKey] = useState(0);
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/product/productDetails")
+        fetch("http://localhost:8080/api/product/productDetails",{
+     
+        headers: {
+          "authorization":`${jwt.token}`,
+          
+        }
+      })
           .then((response) => response.json())
           .then((data) => setinfo(data.productDetails));
       }, [rerenderKey]);
@@ -24,7 +32,11 @@ function Table(){
 
 const handleDelete=(productId)=>{
     fetch(`http://localhost:8080/api/product/deleteproduct/${productId}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+          "authorization": ` ${jwt.token}`,
+          "Content-Type": "application/json"
+        }
       })
       .then(response => {
         toast.success("Product deleted successfully!");

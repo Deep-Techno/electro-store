@@ -8,9 +8,11 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Cookies from "js-cookie";
 const Productpload=()=>{
     
-
+  const jwt=Cookies.get();
+  console.log('ttttttttttttttt',jwt.token)
 
     const defaultvalue={
    
@@ -46,6 +48,7 @@ const Productpload=()=>{
           fetch('http://localhost:8080/api/product/store-data', {       //phala 5000 port pa req ja rahe thi http://localhost:5000/upload
             method: 'POST',
             body: formData
+           
           })
             .then(response => response.text())
             .then(response => {

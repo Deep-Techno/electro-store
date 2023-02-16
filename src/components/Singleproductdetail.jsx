@@ -5,6 +5,7 @@ import Copyright from './Copyright';
 import {useParams} from 'react-router-dom';
 import axios from "axios";
 import { useState,useEffect } from 'react';
+import Cookies from "js-cookie";
 function Singleproductdetail(){
  
 
@@ -13,14 +14,20 @@ function Singleproductdetail(){
   const [singleproductdata,setsingleproduct]=useState([])
   const {id}=useParams()
   console.log(id);
-
+  const jwt=Cookies.get();
+  console.log('ttttttttttttttt',jwt.token)
   useEffect(  ()=>{
 
    const getUserById= async ()=>{
      
       const apiurl='http://localhost:8080/api/singleproduct';
       try{
-          const response= await  axios.get(`${apiurl}/${id}`)
+          const response= await  axios.get(`${apiurl}/${id}`,{
+            headers: {
+              Authorization: ` ${jwt.token}`, 
+              "Content-Type": "application/json"
+            }
+          })
          
           // setsingleproduct(response.data.singledata)
           setsingleproduct(response.data)

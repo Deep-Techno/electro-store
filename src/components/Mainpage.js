@@ -12,12 +12,21 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Cookies from "js-cookie";
 const Mainpage = () => {
   const dispatch = useDispatch();
   const [info, setinfo] = useState([]);
   const [query, setquery] = useState("");
+  const jwt=Cookies.get();
+  console.log('ttttttttttttttt',jwt.token)
   useEffect(() => {
-    fetch("http://localhost:8080/api/product/productDetails")
+    fetch("http://localhost:8080/api/product/productDetails",{
+     
+      headers: {
+        "authorization":`${jwt.token}`,
+        
+      }
+    })
       .then((response) => response.json())
       .then((data) => setinfo(data.productDetails));
   }, []);
